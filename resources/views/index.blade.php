@@ -31,14 +31,15 @@
             <h1 class="text-4xl font-bold mb-4">レシピ一覧</h1>
             <ul>
                 @foreach($recipes as $recipe)
-                    <li class="mt-3">
-                        <a href="{{ route('recipes.show', $recipe->id) }}" class="text-xl">{{ $recipe->title }}</a>
-                        @if($recipe->user)
-                            <span class="text-sm text-gray-500 ml-2">投稿者: {{ $recipe->user->name }}</span>
-                        @else
-                            <span class="text-sm text-gray-500 ml-2">投稿者: 不明</span>
-                        @endif
-                    </li>
+                        <li class="mt-3">
+                            <a href="{{ route('recipes.show', $recipe->id) }}" class="text-xl">{{ $recipe->title }}</a>
+                            @if($recipe->user)
+                                <span class="text-sm text-gray-500 ml-2">投稿者: {{ $recipe->user->name }}</span>
+                                
+                            @else
+                                <span class="text-sm text-gray-500 ml-2">投稿者: 不明</span>
+                            @endif
+                        </li>
                 @endforeach
             </ul>
         </div>
